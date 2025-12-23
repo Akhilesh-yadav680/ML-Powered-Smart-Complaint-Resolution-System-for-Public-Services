@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+
+        <h2>Smart Complaint Resolution System</h2>
+        <p style="text-align:center; color:#666; margin-top:-6px;">
+            ML-powered grievance management for smart cities
+        </p>
+
+        <hr style="margin:18px 0;">
+
+        <!-- How it works -->
+        
+        <form method="post" style="margin-top:18px;">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+
+        <p style="text-align:center; margin-top:18px;">
+            New Citizen? <a href="/signup">Create an account</a>
+        </p>
+<!-- How it works -->
+        <div style="font-size:13px; color:#555;">
+            <strong>How this system works:</strong>
+            <ul style="margin-top:8px; padding-left:18px;">
+                <li>Citizens submit complaints online</li>
+                <li>ML auto-classifies & prioritizes issues</li>
+                <li>Authorities resolve complaints faster</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

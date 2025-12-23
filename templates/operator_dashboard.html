@@ -1,0 +1,174 @@
+{% extends "base_admin.html" %}
+{% block title %}Operator Dashboard{% endblock %}
+
+{% block content %}
+<h3 class="mb-4">🧑‍💼 Operator Dashboard</h3>
+
+<!-- KPI CARDS -->
+<div class="row g-3 mb-4">
+  <div class="col-md-3">
+    <div class="card p-3 text-center shadow-sm">
+      <div class="text-muted">Total</div>
+      <h3>{{ total }}</h3>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card p-3 text-center shadow-sm border-warning">
+      <div class="text-warning">Pending</div>
+      <h3>{{ pending }}</h3>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card p-3 text-center shadow-sm border-primary">
+      <div class="text-primary">In Progress</div>
+      <h3>{{ in_progress }}</h3>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card p-3 text-center shadow-sm border-success">
+      <div class="text-success">Resolved</div>
+      <h3>{{ resolved }}</h3>
+    </div>
+  </div>
+</div>
+
+<!-- CHARTS -->
+<div class="row g-3 mb-4">
+  <div class="col-md-6">
+    <div class="card p-3 shadow-sm">
+      <h6>Complaints by Category</h6>
+      <canvas id="categoryChart"></canvas>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card p-3 shadow-sm">
+      <h6>Status Distribution</h6>
+      <canvas id="statusChart"></canvas>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card p-3 shadow-sm">
+      <h6>Priority Distribution</h6>
+      <canvas id="priorityChart"></canvas>
+    </div>
+  </div>
+</div>
+
+<!-- TABLE -->
+<div class="card p-4 shadow-sm">
+  <h5 class="mb-3">All Complaints</h5>
+  <div class="table-responsive">
+    <table class="table table-hover align-middle">
+      <thead class="table-light">
+        <tr>
+          <th>ID</th>
+          <th>Complaint</th>
+          <th>Location</th>
+          <th>Category</th>
+          <th>Priority</th>
+          <th>Status</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for c in complaints %}
+        <tr>
+          <td>{{ c.id }}</td>
+
+          <td style="max-width:320px">{{ c.text }}</td>
+
+          <!-- LOCATION -->
+          <td>{{ c.location }}</td>
+
+          <td>{{ c.category }}</td>
+
+          <td>
+            {% if c.priority == "High" %}
+              <span class="badge bg-danger">High</span>
+            {% elif c.priority == "Medium" %}
+              <span class="badge bg-warning text-dark">Medium</span>
+            {% else %}
+              <span class="badge bg-success">Low</span>
+            {% endif %}
+          </td>
+
+          <td>
+            {% if c.status == "Resolved" %}
+              <span class="badge bg-success">Resolved</span>
+            {% elif c.status == "In Progress" %}
+              <span class="badge bg-primary">In Progress</span>
+            {% else %}
+              <span class="badge bg-secondary">Pending</span>
+            {% endif %}
+          </td>
+
+          <!-- UPDATE STATUS -->
+          <td>
+            <form method="POST" action="/update_status/{{ c.id }}" class="d-flex gap-2">
+              <select name="status" class="form-select form-select-sm">
+                <option {% if c.status=="Pending" %}selected{% endif %}>Pending</option>
+                <option {% if c.status=="In Progress" %}selected{% endif %}>In Progress</option>
+                <option {% if c.status=="Resolved" %}selected{% endif %}>Resolved</option>
+              </select>
+              <button class="btn btn-sm btn-outline-success">Save</button>
+            </form>
+          </td>
+
+          <!-- DELETE (ONLY IF RESOLVED) -->
+          <td>
+            {% if c.status == "Resolved" %}
+              <a href="/operator_delete/{{ c.id }}"
+                 onclick="return confirm('Delete this resolved complaint?')"
+                 class="btn btn-sm btn-outline-danger">
+                 Delete
+              </a>
+            {% else %}
+              <span class="text-muted">—</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- CHART SCRIPTS -->
+<script>
+  new Chart(document.getElementById("categoryChart"), {
+    type: "bar",
+    data: {
+      labels: {{ cat_labels | safe }},
+      datasets: [{
+        label: "Count",
+        data: {{ cat_values | safe }},
+        backgroundColor: "#0d6efd"
+      }]
+    }
+  });
+
+  new Chart(document.getElementById("statusChart"), {
+    type: "doughnut",
+    data: {
+      labels: {{ status_labels | safe }},
+      datasets: [{
+        data: {{ status_values | safe }},
+        backgroundColor: ["#6c757d", "#0d6efd", "#198754"]
+      }]
+    }
+  });
+
+  new Chart(document.getElementById("priorityChart"), {
+    type: "pie",
+    data: {
+      labels: {{ priority_labels | safe }},
+      datasets: [{
+        data: {{ priority_values | safe }},
+        backgroundColor: ["#dc3545", "#ffc107", "#198754"]
+      }]
+    }
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Complaint</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+        }
+        .container {
+            max-width: 600px;
+            margin: 80px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        textarea, input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 12px;
+            font-size: 14px;
+        }
+        button {
+            background: #007bff;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .hint {
+            font-size: 12px;
+            color: #666;
+            margin-top: 6px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h2>Submit Complaint</h2>
+
+    <form method="POST">
+
+        <!-- Complaint Text -->
+        <label><b>Complaint Description</b></label>
+        <textarea 
+            name="complaint" 
+            rows="5" 
+            placeholder="Describe the issue clearly (minimum 3 words). Example: Street light not working near park"
+            required></textarea>
+
+        <div class="hint">
+            ⚠ Avoid spam words like "hi", "hello", "test". Meaningful complaints only.
+        </div>
+
+        <!-- Location -->
+        <label><b>Location</b></label>
+        <input 
+            type="text" 
+            name="location" 
+            placeholder="Eg: Kukatpally, Hyderabad"
+            required>
+
+        <button type="submit">Submit Complaint</button>
+
+    </form>
+</div>
+</body>
+</html>

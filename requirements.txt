@@ -1,0 +1,8 @@
+Flask==3.0.3
+Flask-Login==0.6.3
+gunicorn==21.2.0
+joblib
+scikit-learn
+SQLAlchemy
+nltk
+pandas==2.1.4
