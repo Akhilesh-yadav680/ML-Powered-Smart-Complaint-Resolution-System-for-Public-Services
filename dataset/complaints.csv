@@ -1,0 +1,96 @@
+text,category,priority
+No water supply for 2 days,Water,High
+Water pipeline is broken near my house,Water,High
+Drinking water is muddy and unsafe,Water,High
+Low water pressure since last week,Water,Medium
+Water supply timing is very irregular,Water,Medium
+Water tap leakage on main road,Water,Low
+Garbage not collected in my area,Sanitation,Medium
+Garbage bins are overflowing,Sanitation,High
+Bad smell due to waste near houses,Sanitation,High
+Garbage truck did not come today,Sanitation,Medium
+Street garbage needs cleaning,Sanitation,Low
+Plastic waste dumped near park,Sanitation,Low
+Street light not working,Electricity,Low
+Multiple street lights not functioning,Electricity,Medium
+Complete power outage in our area,Electricity,High
+Frequent power cuts during night,Electricity,Medium
+Electric pole sparks during rain,Electricity,High
+Voltage fluctuation damaging appliances,Electricity,High
+Road has many potholes causing accidents,Roads,High
+Road damaged due to heavy rains,Roads,High
+Uneven road surface near school,Roads,Medium
+Broken footpath creating problems for pedestrians,Roads,Medium
+Road needs resurfacing,Roads,Low
+Cracks observed on bridge road,Roads,High
+Sewage water overflowing on road,Drainage,High
+Drainage blockage causing water logging,Drainage,High
+Open manhole without cover,Drainage,High
+Drain cleaning required urgently,Drainage,Medium
+Drain smells badly,Drainage,Low
+Slow drainage during rains,Drainage,Medium
+Public park lights not working,Public Services,Low
+Park cleanliness is very poor,Public Services,Medium
+Children play area equipment broken,Public Services,Medium
+Public toilet not usable,Public Services,High
+Bus stop shelter damaged,Public Services,Medium
+No seating facility at bus stop,Public Services,Low
+Traffic signal not working at junction,Traffic,High
+Traffic signal timing incorrect,Traffic,Medium
+No traffic police during peak hours,Traffic,Medium
+Illegal parking causing traffic jam,Traffic,Low
+Zebra crossing faded near school,Traffic,Medium
+Speed breaker missing on busy road,Traffic,High
+Stray dogs creating danger at night,Animal Control,Medium
+Dead animal on roadside,Animal Control,High
+Monkey menace in residential area,Animal Control,Medium
+Cattle roaming on main road,Animal Control,High
+Animal waste on streets,Animal Control,Low
+,,
+No water supply for 2 days,Water,High
+Water pipeline is broken near my house,Water,High
+Drinking water is muddy and unsafe,Water,High
+Low water pressure since last week,Water,Medium
+Water supply timing is very irregular,Water,Medium
+Water tap leakage on main road,Water,Low
+Garbage not collected in my area,Sanitation,Medium
+Garbage bins are overflowing,Sanitation,High
+Bad smell due to waste near houses,Sanitation,High
+Garbage truck did not come today,Sanitation,Medium
+Street garbage needs cleaning,Sanitation,Low
+Plastic waste dumped near park,Sanitation,Low
+Street light not working,Electricity,Low
+Multiple street lights not functioning,Electricity,Medium
+Complete power outage in our area,Electricity,High
+Frequent power cuts during night,Electricity,Medium
+Electric pole sparks during rain,Electricity,High
+Voltage fluctuation damaging appliances,Electricity,High
+Road has many potholes causing accidents,Roads,High
+Road damaged due to heavy rains,Roads,High
+Uneven road surface near school,Roads,Medium
+Broken footpath creating problems for pedestrians,Roads,Medium
+Road needs resurfacing,Roads,Low
+Cracks observed on bridge road,Roads,High
+Sewage water overflowing on road,Drainage,High
+Drainage blockage causing water logging,Drainage,High
+Open manhole without cover,Drainage,High
+Drain cleaning required urgently,Drainage,Medium
+Drain smells badly,Drainage,Low
+Slow drainage during rains,Drainage,Medium
+Public park lights not working,Public Services,Low
+Park cleanliness is very poor,Public Services,Medium
+Children play area equipment broken,Public Services,Medium
+Public toilet not usable,Public Services,High
+Bus stop shelter damaged,Public Services,Medium
+No seating facility at bus stop,Public Services,Low
+Traffic signal not working at junction,Traffic,High
+Traffic signal timing incorrect,Traffic,Medium
+No traffic police during peak hours,Traffic,Medium
+Illegal parking causing traffic jam,Traffic,Low
+Zebra crossing faded near school,Traffic,Medium
+Speed breaker missing on busy road,Traffic,High
+Stray dogs creating danger at night,Animal Control,Medium
+Dead animal on roadside,Animal Control,High
+Monkey menace in residential area,Animal Control,Medium
+Cattle roaming on main road,Animal Control,High
+Animal waste on streets,Animal Control,Low
